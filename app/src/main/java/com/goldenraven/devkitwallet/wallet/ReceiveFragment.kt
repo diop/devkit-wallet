@@ -43,16 +43,17 @@ class ReceiveFragment : Fragment() {
         }
 
         binding.generateNewAddressButton.setOnClickListener {
-            Log.i(TAG, Wallet.getLastUnusedAddress())
+            // Log.i(TAG, Wallet.getLastUnusedAddress())
             displayNewAddress()
         }
     }
 
     private fun displayNewAddress() {
-        val newGeneratedAddress: String = Wallet.getLastUnusedAddress()
-        Log.i(TAG, "New deposit address is $newGeneratedAddress")
+        // TWITCH STREAM WITH CONOR
+        val newGeneratedAddress: String = "Twitch Stream with Conor"
 
-        val qrgEncoder: QRGEncoder = QRGEncoder(newGeneratedAddress, null, QRGContents.Type.TEXT, 1000)
+        Log.i(TAG, "New deposit address is $newGeneratedAddress")
+        val qrgEncoder: QRGEncoder = QRGEncoder(rick, null, QRGContents.Type.TEXT, 1000)
         qrgEncoder.colorBlack = ContextCompat.getColor(requireContext(), R.color.night_1)
         qrgEncoder.colorWhite = ContextCompat.getColor(requireContext(), R.color.snow_1)
         try {
@@ -64,3 +65,5 @@ class ReceiveFragment : Fragment() {
         binding.receiveAddress.text = newGeneratedAddress
     }
 }
+
+const val rick: String = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"

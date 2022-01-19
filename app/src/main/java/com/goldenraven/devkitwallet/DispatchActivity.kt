@@ -19,7 +19,7 @@ class DispatchActivity : AppCompatActivity() {
         // ask Repository if a wallet already exists
         val walletInitialized: Boolean = Repository.doesWalletExist()
 
-        // launch into wallet activity if user already has a Summer of Bitcoin Wallet saved on device
+        // launch into wallet activity if user already has a Devkit Wallet saved on device
         if (walletInitialized) {
             Wallet.loadExistingWallet()
             startActivity(Intent(this, WalletActivity::class.java))

@@ -77,24 +77,22 @@ class SendFragment : Fragment() {
             val recipient: String = binding.sendToAddress.text.toString().trim()
             val sendAmount: ULong = binding.sendAmount.text.toString().trim().toULong()
 
+            // TWITCH STREAM WITH CONOR
             // create, sign, and broadcast
-            val psbt: PartiallySignedBitcoinTransaction = Wallet.createTransaction(recipient, sendAmount, feeRate)
-            Wallet.sign(psbt)
-            val transaction: Transaction = Wallet.broadcast(psbt)
 
-            val details = when (transaction) {
-                is Transaction.Confirmed -> transaction.details
-                is Transaction.Unconfirmed -> transaction.details
-            }
+            // val details = when (transaction) {
+            //     is Transaction.Confirmed -> transaction.details
+            //     is Transaction.Unconfirmed -> transaction.details
+            // }
 
-            val txidString = details.txid
+            // val txidString = details.txid
 
-            Log.i(TAG, "Transaction was broadcast! txid: $txidString")
-            showSnackbar(
-                requireView(),
-                SnackbarLevel.SUCCESS,
-                "Transaction was broadcast successfully!"
-            )
+            // Log.i(TAG, "Transaction was broadcast! txid: $txidString")
+            // showSnackbar(
+            //     requireView(),
+            //     SnackbarLevel.SUCCESS,
+            //     "Transaction was broadcast successfully!"
+            // )
         } catch (e: Throwable) {
             Log.i(TAG, "Broadcast error: ${e.message}")
             showSnackbar(

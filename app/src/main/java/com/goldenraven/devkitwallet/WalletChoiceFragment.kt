@@ -35,13 +35,16 @@ class WalletChoiceFragment : Fragment() {
         val navController = Navigation.findNavController(view)
 
         binding.newWalletButton.setOnClickListener {
+            // TWITCH STREAM WITH CONOR
             Wallet.createWallet()
             val intent: Intent = Intent(this@WalletChoiceFragment.context, WalletActivity::class.java)
             startActivity(intent)
             activity?.finish()
         }
         binding.recoverWalletButton.setOnClickListener {
-            navController.navigate(R.id.action_walletChoiceFragment_to_recoverWalletFragment)
+            // TWITCH STREAM WITH CONOR
+            // we won't be implementing wallet recovery
+            // navController.navigate(R.id.action_walletChoiceFragment_to_recoverWalletFragment)
         }
     }
 }

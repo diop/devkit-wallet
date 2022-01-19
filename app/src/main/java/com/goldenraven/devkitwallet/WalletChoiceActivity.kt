@@ -15,12 +15,5 @@ class WalletChoiceActivity : AppCompatActivity() {
         val binding = ActivityWalletChoiceBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(findViewById(R.id.toolbar))
-
-//        binding.newWalletButton.setOnClickListener {
-//            Wallet.createWallet()
-//            val intent: Intent = Intent(this, WalletActivity::class.java)
-//            startActivity(intent)
-//            finish()
-//        }
     }
 }

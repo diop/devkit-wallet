@@ -28,37 +28,21 @@ object Wallet {
         Wallet.path = path
     }
 
+    fun createWallet(): Unit {
+        // TWITCH STREAM WITH CONOR
+    }
+
     private fun initialize(
         descriptor: String,
         changeDescriptor: String,
     ): Unit {
-        val database = DatabaseConfig.Sled(SledDbConfiguration(path, name))
-        val blockchain = BlockchainConfig.Electrum(ElectrumConfig(electrumURL, null, 5u, null, 10u))
-        wallet = OnlineWallet(
-            descriptor,
-            changeDescriptor,
-            Network.TESTNET,
-            database,
-            blockchain
-        )
-    }
-
-    fun createWallet(): Unit {
-        val keys: ExtendedKeyInfo = generateExtendedKey(Network.TESTNET, MnemonicType.WORDS12, null)
-        val descriptor: String = createDescriptor(keys)
-        val changeDescriptor: String = createChangeDescriptor(keys)
-        initialize(
-            descriptor = descriptor,
-            changeDescriptor = changeDescriptor,
-        )
-        Repository.saveWallet(path, descriptor, changeDescriptor)
-        Repository.saveMnemonic(keys.mnemonic)
+        // TWITCH STREAM WITH CONOR
     }
 
     // only create BIP84 compatible wallets
     private fun createDescriptor(keys: ExtendedKeyInfo): String {
-        Log.i(TAG, "Descriptor for receive addresses is wpkh(${keys.xprv}/84'/1'/0'/0/*)")
-        return ("wpkh(" + keys.xprv + "/84'/1'/0'/0/*)")
+        // TWITCH STREAM WITH CONOR
+        return "bebop"
     }
 
     private fun createChangeDescriptor(keys: ExtendedKeyInfo): String {
@@ -111,5 +95,6 @@ object Wallet {
 
     fun getNewAddress(): String = wallet.getNewAddress()
 
-    fun getLastUnusedAddress(): String = wallet.getLastUnusedAddress()
+    // TWITCH STREAM WITH CONOR
+    // getLastUnusedAddress()
 }
